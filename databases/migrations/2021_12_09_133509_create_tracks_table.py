@@ -10,7 +10,12 @@ class CreateTracksTable(Migration):
         """
         with self.schema.create("tracks") as table:
             table.increments("id")
-
+            table.string("title")
+            table.string("artist")
+            table.string("album")
+            table.string("albumCover")
+            table.string("genre")
+            table.string("trackLength")
             table.timestamps()
 
     def down(self):
