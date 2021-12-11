@@ -23,13 +23,15 @@ class TrackController(Controller):
         albumCover = self.request.input("albumCover")
         genre = self.request.input("genre")
         trackLength = self.request.input("trackLength")
+        mp3Url = self.request.input("mp3Url")
         track = Track.create({
             "title": title,
             "artist": artist,
             "album": album,
             "albumCover": albumCover,
             "genre": genre,
-            "trackLength": trackLength
+            "trackLength": trackLength,
+            "mp3Url": mp3Url
         })
         return track
 
@@ -41,6 +43,7 @@ class TrackController(Controller):
         albumCover = self.request.input("albumCover")
         genre = self.request.input("genre")
         trackLength = self.request.input("trackLength")
+        mp3Url = self.request.input("mp3Url")
         id = self.request.param("id")
         Track.where("id", id).update({
             "title": title,
@@ -48,7 +51,8 @@ class TrackController(Controller):
             "album": album,
             "albumCover": albumCover,
             "genre": genre,
-            "trackLength": trackLength
+            "trackLength": trackLength,
+            "mp3Url": mp3Url
         })
         return Track.where("id", id).get()
 

@@ -16,6 +16,7 @@ class CreateTracksTable(Migration):
             table.string("albumCover")
             table.string("genre")
             table.string("trackLength")
+            table.string("mp3Url")
             table.timestamps()
 
     def down(self):
