@@ -15,7 +15,7 @@ class CreateTracksTable(Migration):
             table.string("album")
             table.string("albumCover")
             table.string("genre")
-            table.string("trackLength")
+            table.integer("favorite")
             table.string("mp3Url")
             table.timestamps()
 
