@@ -10,12 +10,12 @@ class CreateTracksTable(Migration):
         """
         with self.schema.create("tracks") as table:
             table.increments("id")
-            table.string("title")
+            table.string("title").default("Unknown Title")
             table.string("artist")
             table.string("album")
             table.string("albumCover")
             table.string("genre")
-            table.integer("favorite")
+            table.boolean("favorite")
             table.string("mp3Url")
             table.timestamps()
 
